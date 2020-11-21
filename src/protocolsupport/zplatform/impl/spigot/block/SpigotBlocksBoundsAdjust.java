@@ -17,18 +17,18 @@ import protocolsupport.utils.ReflectionUtils;
 public class SpigotBlocksBoundsAdjust {
 
 	public static void inject() {
-		ReflectionUtils.setStaticFinalField(BlockWaterLily.class, "a", VoxelShapes.create(0.0625D, 0.0, 0.0625D, 0.9375D, 0.015625D, 0.9375D));
+		ReflectionUtils.setStaticFinalField(BlockWaterLily.class, "field_11728", VoxelShapes.create(0.0625D, 0.0, 0.0625D, 0.9375D, 0.015625D, 0.9375D));
 
-		ReflectionUtils.setStaticFinalField(BlockLadder.class, "c", VoxelShapes.create(0.0D, 0.0D, 0.0D, 0.125D, 1.0D, 1.0D));
-		ReflectionUtils.setStaticFinalField(BlockLadder.class, "d", VoxelShapes.create(0.875D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D));
-		ReflectionUtils.setStaticFinalField(BlockLadder.class, "e", VoxelShapes.create(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.125D));
-		ReflectionUtils.setStaticFinalField(BlockLadder.class, "f", VoxelShapes.create(0.0D, 0.0D, 0.875D, 1.0D, 1.0D, 1.0D));
+		ReflectionUtils.setStaticFinalField(BlockLadder.class, "field_11255", VoxelShapes.create(0.0D, 0.0D, 0.0D, 0.125D, 1.0D, 1.0D));
+		ReflectionUtils.setStaticFinalField(BlockLadder.class, "field_11252", VoxelShapes.create(0.875D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D));
+		ReflectionUtils.setStaticFinalField(BlockLadder.class, "field_11254", VoxelShapes.create(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 0.125D));
+		ReflectionUtils.setStaticFinalField(BlockLadder.class, "field_11256", VoxelShapes.create(0.0D, 0.0D, 0.875D, 1.0D, 1.0D, 1.0D));
 
-		ReflectionUtils.setStaticFinalField(BlockCarpet.class, "a", VoxelShapes.create(0, 0, 0, 1.0D, 0.00001, 1.0D));
+		ReflectionUtils.setStaticFinalField(BlockCarpet.class, "field_11783", VoxelShapes.create(0, 0, 0, 1.0D, 0.00001, 1.0D));
 
 		{
-			Field shapesField1 = ReflectionUtils.getField(BlockTall.class, "g");
-			Field shapesField2 = ReflectionUtils.getField(BlockTall.class, "h");
+			Field shapesField1 = ReflectionUtils.getField(BlockTall.class, "field_10901");
+			Field shapesField2 = ReflectionUtils.getField(BlockTall.class, "field_10906");
 			Consumer<BlockIronBars> setBarsBounds = bars -> {
 				VoxelShape[] shapes = createBarsShapes();
 				ReflectionUtils.setField(shapesField1, bars, shapes);
